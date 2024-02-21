@@ -1,0 +1,143 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #333;
+    padding: 0px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    margin-top: 80px; /* Margin entsprechend der Höhe des Headers */
+
+    @media (max-width: 1000px) {
+        gap: 10px; /* Kleinerer Abstand für Mobilgeräte */
+	margin-top: 120px;
+    }
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 8px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+}
+
+.title {
+    height: 80px;
+    background: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.title h1 {
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+    font-size: 2.3em;
+    letter-spacing: 7px;
+}
+
+.list {
+    height: 30px;
+    background: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Bebas Neue', sans-serif;
+    transition: 0.2s;
+}
+
+.list ul {
+    display: flex;
+}
+
+.list ul li {
+    list-style: none;
+    margin: 0 30px;
+    padding-bottom: 10px;
+}
+
+.list ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer {
+    font-family: 'Bebas Neue', sans-serif;
+    background: #262A2B;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    margin-top: auto;
+}
+
+.schrift {
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+    font-size: 2.3em;
+    letter-spacing: 7px;
+    margin-top: 200px;
+
+    @media (max-width: 1000px) {
+        margin-top: 600px;    }
+}

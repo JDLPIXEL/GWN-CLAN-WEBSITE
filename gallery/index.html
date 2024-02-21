@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" http-equiv="refresh" content="">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="header.css">
+    <title>Gallery - ETS2 2024</title>
+</head>
+<body>
+
+    <header>
+        <div id="header" class="title">
+            <h1>Dein Gaming World Network [GWN] Clan</h1>
+        </div>
+        <div class="list">
+            <ul>
+                <li><a href="https://gwn-clan.de/">Home</a></li>
+                <li><a href="ts3server://gwn-clan.de">TeamSpeak</a></li>
+                <li><a href="https://discord.gwn-clan.de/">Discord</a></li>
+                <li><a href="https://music.gwn-clan.de/">Music-Dashboard</a></li>
+                <li><a href="#">Über uns</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <br>
+    <div class="schrift">
+    <h2>Euro Truck Simulator 2024</h1>
+    </div>
+    <div class="gallery">
+        <!-- Hier fügst du deine Bilder ein -->
+        <img src="https://i.ibb.co/fD2mq07/20240119230320-1.jpg" alt="Bild 1" onclick="openLightbox('https://i.ibb.co/fD2mq07/20240119230320-1.jpg')">
+        <img src="https://i.ibb.co/Gth5Kzw/20240120001101-1.jpg" alt="Bild 2" onclick="openLightbox('https://i.ibb.co/Gth5Kzw/20240120001101-1.jpg')">
+        <img src="https://i.ibb.co/RNn3dPb/20240120193323-1.jpg" alt="Bild 3" onclick="openLightbox('https://i.ibb.co/RNn3dPb/20240120193323-1.jpg')">
+        <img src="https://i.ibb.co/WKhkgHM/20240120201113-1.jpg" alt="Bild 4" onclick="openLightbox('https://i.ibb.co/WKhkgHM/20240120201113-1.jpg')">
+        <img src="https://i.ibb.co/DL9Dqrm/20240120204412-1.jpg" alt="Bild 5" onclick="openLightbox('https://i.ibb.co/DL9Dqrm/20240120204412-1.jpg')">
+        <img src="https://i.ibb.co/vZBXrMD/20240120205435-1.jpg" alt="Bild 6" onclick="openLightbox('https://i.ibb.co/vZBXrMD/20240120205435-1.jpg')">
+        <img src="https://i.ibb.co/vmwLBp8/20240120205530-1.jpg" alt="Bild 7" onclick="openLightbox('https://i.ibb.co/vmwLBp8/20240120205530-1.jpg')">
+        <img src="https://i.ibb.co/ZHWJWZc/20240120210028-1.jpg" alt="Bild 8" onclick="openLightbox('https://i.ibb.co/ZHWJWZc/20240120210028-1.jpg')">
+        <img src="https://i.ibb.co/vq0CLMr/20240120210044-1.jpg" alt="Bild 9" onclick="openLightbox('https://i.ibb.co/vq0CLMr/20240120210044-1.jpg')">
+        <img src="https://i.ibb.co/qkGyKZN/20240120210056-1.jpg" alt="Bild 10" onclick="openLightbox('https://i.ibb.co/qkGyKZN/20240120210056-1.jpg')">
+        <img src="https://i.ibb.co/126GjSB/20240120222129-1.jpg" alt="Bild 11" onclick="openLightbox('https://i.ibb.co/126GjSB/20240120222129-1.jpg')">
+        <img src="https://i.ibb.co/R6yLnbX/20240120225802-1.jpg" alt="Bild 12" onclick="openLightbox('https://i.ibb.co/R6yLnbX/20240120225802-1.jpg')">
+        <img src="https://i.ibb.co/DbRrkN2/20240120230026-1.jpg" alt="Bild 13" onclick="openLightbox('https://i.ibb.co/DbRrkN2/20240120230026-1.jpg')">
+        <img src="https://i.ibb.co/ZV8w7Kc/20240120235315-1.jpg" alt="Bild 14" onclick="openLightbox('https://i.ibb.co/ZV8w7Kc/20240120235315-1.jpg')">
+        <img src="https://i.ibb.co/7GtpPyh/20240120235320-1.jpg" alt="Bild 15" onclick="openLightbox('https://i.ibb.co/7GtpPyh/20240120235320-1.jpg')">
+    </div>
+
+    <div class="lightbox" onclick="closeLightbox()">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Vergrößertes Bild">
+    </div>
+
+    <script>
+        function openLightbox(imageSrc) {
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+
+            lightboxImg.src = imageSrc;
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.querySelector('.lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
+
+    <br><br><br>
+    <footer class="footer">
+        <p>&copy; 2024 [GWN] Gaming World Network 🎮 | <a href="/impressum" title="Impressum">
+    Impressum
+</a></p></p>
+    </footer>
+
+</body>
+</html>

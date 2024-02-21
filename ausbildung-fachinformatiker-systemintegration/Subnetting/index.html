@@ -1,0 +1,164 @@
+<html>
+  <head>
+	  <meta charset="UTF-8" http-equiv="refresh" content="">
+	  <title>Subnetting Grundlagen</title>
+  </head>
+  <body>
+<h2> Subnetting </h2>
+<h3> Copyright 2024 by Jamie Lambeck</h3>
+	  <pre>
+
+
+
+IPv4:			192  	 .  128     .  0       .  0        [/24]
+Binär:			11000000 . 10000000 . 00000000 . 00000000
+Subnetz:		255	 .  255	    .  255     .  0
+Binär:			11111111 . 11111111 . 11111111 . 00000000
+Anteil:			Netz	 . Netz     . Netz     . Host
+
+Berechnung Netzanteil										
+[mit Und-Verknüpfung]											
+			11000000 . 10000000 . 00000000 . 00000000  (IPv4 aus dem Subnetz)			
+   		{and}	11111111 . 11111111 . 11111111 . 00000000  (Subnetzmaske)			
+														
+			-----------------------------------------						
+Binär-Ergebnis:		11000000 . 10000000 . 00000000 . 00000000						
+Dezimal-Ergebnis:       192  	 .  128     .  0       .  0								
+													
+Berechnung Hostanteil												
+[Alles was bei der Subnetzmaske 0 bleibt = Hostanteil]							
+													
+Broadcast:		192  	 .  128     .  0       .  255	   (Letzter Möglicher Wert)		
+														
+												
+Berechnung der Hosts
+[Formel: 2ᴴᵒˢᵗᵃⁿᵗᵉⁱˡ-2 ODER 2ʰ -2 (-2, wegen Broadcast- & Subnetzadresse]
+		    1.	00000000 = 8 Host-Bits
+		    2. 	2ᴴᵒˢᵗᵃⁿᵗᵉⁱˡ-2 = 2⁸-2
+                    3.  2⁸-2 = 254
+                    4.  254 = Hosts
+
+Netzklassen:
+
+Klasse		Subnetzmaske		Hosts
+A		255.0.0.0		2²⁴-2 ≈ 16.8 x 10⁶
+B		255.255.0.0		2¹⁶-2 = 65534
+C		255.255.255.0		2⁸-2  = 254
+
+Subnetze aufbauen:
+[Beispielaufgabe: Baue aus folgendem Netz 4 unterschiedliche Subnetze auf]
+IPv4:			192  	 .  128     .  0       .  0        [/24]
+Binär:			11111111 . 11111111 . 11111111 . 00000000
+Subnetz:		255	 .  255	    .  255     .  0
+
+Wir können an die Subnetzmaske 2 weitere 1-sen dranhängen, weil 2² = 4 ergibt.
+Das vierte Subnetz wäre also das Netz mit den zwei 1-sen hinten.
+So wissen wir das wir mit zwei weiteren 1-sen, 4 weitere Subnetze bilden können:
+
+1. Subnetz: 00		11111111 . 11111111 . 11111111 . 00000000
+2. Subnetz: 01		11111111 . 11111111 . 11111111 . 01000000
+3. Subnetz: 10		11111111 . 11111111 . 11111111 . 10000000
+4. Subnetz: 11		11111111 . 11111111 . 11111111 . 11000000
+
+
+Protokolle:
+
+ARP (Adress Resolution Protocol):
+- Löst IP-Adressen in MAC-Adressen innerhalb lokaler Netzwerke auf.
+- ARP-Anfragen werden mit der IP-Adresse des unbekannten Geräts und einer Platzhalter-MAC-Adresse gesendet.
+- Erhält ein Gerät die Anfrage, antwortet es mit seiner MAC-Adresse.
+- Der Anforderer aktualisiert seine ARP-Tabelle mit der IP-MAC-Zuordnung.
+
+TCP (Transmission Control Protocol):
+- Drei-Wege-Handshake: SYN (Anfrage), SYN+ACK (Bestätigung), und ACK (Bestätigung).
+- Gewährleistet zuverlässigen Datenverkehr mit Bestätigungen für jedes Paket.
+- Häufig für anfällige Anwendungen, z.B. Downloads oder Online-Gaming.
+
+UDP (User Datagram Protocol):
+- Kein Handshake; Daten werden ohne Bestätigung gesendet.
+- Verwendet für anwendungen, die Datenverlust tolerieren, wie Live-Streaming oder Online-Gaming.
+- Garantiert nicht die Zustellung von Paketen.
+
+ICMP (Internet Control Message Protocol):
+- Verwendet für Diagnosezwecke, z.B. Ping.
+- Überprüft, ob eine Verbindung besteht oder auf ein Gerät zugegriffen werden kann.
+
+HTTP (Hypertext Transfer Protocol):
+- Verwendet für die Übertragung von Daten im Web.
+- Hauptsächlich für Websites, kann aber verschiedene Daten übertragen.
+- Unverschlüsselt; sensible Informationen nicht auf HTTP-Websites eingeben.
+
+HTTPS (Hypertext Transfer Protocol Secure):
+- Sichere Version von HTTP mit SSL/TLS-Verschlüsselung.
+- Bevorzugt für sichere Datenübertragung, besonders für Websites.
+
+POP (Post Office Protocol):
+- Holt E-Mails vom Mailserver zum Client ab.
+- Sammelt alle verfügbaren E-Mails, die noch nicht auf dem Client sind.
+
+SMTP (Simple Mail Transfer Protocol):
+- Sendet E-Mails vom Client zum Mailserver.
+- Wird auch zum Weiterleiten von E-Mails verwendet.
+
+IMAP (Internet Message Access Protocol):
+- Ähnlich wie POP, speichert aber Einstellungen und ermöglicht synchronisierte Ordner über Geräte hinweg.
+- Bietet Funktionen wie als gelesen markieren und serverbasierte Mail-Suche.
+
+IP (Internet Protocol):
+- Grundlegendes Protokoll für die Internetkommunikation.
+- Wird verwendet, um Netzwerke zu erstellen und Geräteverbindungen zu ermöglichen.
+- IPv4 und IPv6 sind gängige Versionen, wobei IPv4 noch weit verbreitet ist.
+
+DHCP (Dynamic Host Configuration Protocol):
+- Dynamisches Hostkonfigurationsprotokoll.
+- Automatisiert die Vergabe von IP-Adressen und Netzwerkkonfigurationen in einem Netzwerk.
+ b- DHCP-Server verteilt IP-Adressen an DHCP-Clients bei deren Verbindung zum Netzwerk.
+- Zusätzlich werden Subnetzmasken, Gateway-Adressen, DNS-Server und andere Konfigurationsinformationen zugewiesen.
+- Verhindert Konflikte durch die automatische Zuweisung von einmaligen IP-Adressen.
+- Leased IP-Adressen haben eine begrenzte Gültigkeitsdauer, Client muss regelmäßig erneuern.
+- Vereinfacht die Netzwerkkonfiguration und erleichtert die Verwaltung von IP-Adressen in großen Netzwerken.
+
+Topologien:
+
+Bus-Topologie:
+- Ein zentrales Kabel verbindet alle Geräte.
+- Daten werden direkt über das Kabel gesendet.
+- Einfache Struktur, aber Single Point of Failure bei Kabelproblemen.
+
+Ring-Topologie:
+- Geräte sind in einem geschlossenen Ring miteinander verbunden.
+- Daten werden im Ring weitergeleitet.
+- Zuverlässig, aber Unterbrechung eines Geräts beeinträchtigt den gesamten Ring.
+
+Stern-Topologie:
+- Alle Geräte sind mit einem zentralen Knotenpunkt (Hub/Switch) verbunden.
+- Daten laufen über den zentralen Punkt.
+- Einfach zu erweitern, Ausfall des zentralen Punktes beeinträchtigt das Netzwerk.
+
+Mesh-Topologie:
+- Jedes Gerät ist direkt mit jedem anderen verbunden.
+- Vollständig: jedes Gerät hat eine direkte Verbindung zu jedem anderen.
+- Robust, aber teuer und aufwändig in der Verkabelung.
+
+Baum-Topologie:
+- Hierarchische Struktur mit Haupt- und Unterzweigen.
+- Einfache Erweiterung, aber Ausfall des Hauptknotens beeinträchtigt das gesamte Netzwerk.
+
+Hybride Topologie:
+- Kombination verschiedener Topologien.
+- Bietet Flexibilität und Anpassungsfähigkeit.
+- Beispiel: Kombination von Stern- und Ring-Topologie in einem Netzwerk.
+
+MAC:
+
+Die MAC-Adresse (Media Access Control) besteht aus 6 Byte (48 Bits). 
+Die ersten 3 Byte repräsentieren den Hersteller (OUI), 
+die letzten 3 Byte sind die eindeutige Gerätekennung (NIC). 
+Die OUI wird vom IEEE zugewiesen, und die NIC wird vom Hersteller selbst festgelegt. 
+Die Adresse ist in hexadezimaler Form dargestellt, z.B., 00:1A:2B:3C:4D:5E.
+
+<pre>
+  </body>
+</html>
+
+				
