@@ -1,0 +1,223 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+/* Header for small screens (mobile) */
+@media only screen and (max-width: 1000px) {
+    header {
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+	
+}
+
+.title {
+	padding-top: 80px;
+    height: 150px !important;
+    background: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+	font-size: 1.8em;
+}
+
+.title h1 {
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+    font-size: 1.3em;
+    letter-spacing: 7px;
+}
+
+.list {
+    height: 200px !important;
+    background: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Bebas Neue', sans-serif;
+    transition: 0.2s;
+	font-size: 2.0em;
+}
+
+.list ul {
+    display: flex;
+}
+
+.list ul li {
+    list-style: none;
+    margin: 0 15px; /* Adjusted margin for smaller screens */
+    padding-bottom: 10px;
+}
+
+.list ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Content */
+/* Willkommen auf der Seite */
+.background {
+    background: linear-gradient(#000000bb, #000000bb), url(/20240120210044_1.jpg);
+    width: 100%;
+    background-size: cover;
+    transform: translateY(80px); /* Adjusted translateY for smaller screens */
+    margin-bottom: 80px; /* Adjusted margin for smaller screens */
+    font-family: 'Caveat', sans-serif;
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Adjusted min-height for smaller screens */
+    font-family: 'Caveat', sans-serif;
+	font-size: 1.5em !important;
+}
+
+h1 {
+    color: white;
+    padding: 10px; /* Adjusted padding for smaller screens */
+    font-size: 3em; /* Adjusted font size for smaller screens */
+}
+
+/* Hauptcontent */
+.container {
+    padding-bottom: 500px; /* Adjusted padding for smaller screens */
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.klein {
+    height: 30px; /* Adjusted height for smaller screens */
+    background: #333333c5;
+}
+
+.klein ~ .list {
+    background: #333333c5;
+}
+
+.footer {
+    font-family: 'Bebas Neue', sans-serif;
+    background: #262A2B;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    position: relative;
+    bottom: 0;
+}
+
+}
+/* ----------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ 
+}
+
+/* Header */
+header
+{
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+}
+.title
+{
+    height: 80px;
+    background: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+.title h1
+{
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+    font-size: 2.3em;
+    letter-spacing: 7px;
+}
+.list
+{
+    height: 30px;
+    background: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	font-family: 'Bebas Neue', sans-serif;
+    transition: 0.2s;
+}
+.list ul
+{
+    display: flex;
+}
+.list ul li
+{
+    list-style: none;
+    margin: 0 30px;
+    padding-bottom: 10px;
+}
+.list ul li a
+{
+    text-decoration: none;
+    color: white;
+}
+
+/* Content */
+/* Willkommen auf der Seite */
+.background
+{
+    background:linear-gradient(#000000bb,#000000bb), url(/20240120210044_1.jpg);
+    width: 100%;
+    background-size: cover;
+    transform: translateY(110px);
+    margin-bottom: 110px;
+	font-family: 'Caveat', sans-serif;
+}
+.welcome
+{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 110px);
+	font-family: 'Caveat', sans-serif;
+}
+h1
+{
+    color: white;
+    padding: 20px;
+    font-size: 5em;
+}
+/* Hauptcontent */
+.container
+{
+    padding-bottom: 10px;
+	font-family: 'Bebas Neue', sans-serif;
+}
+
+.klein
+{
+    height: 50px;
+    background: #333333c5;
+}
+.klein ~ .list
+{
+    background:  #333333c5;
+}
+.footer {
+   font-family: 'Bebas Neue', sans-serif;
+   background: #262A2B;
+   padding: 10px;
+   text-align: center;
+   color: white;
+   position: relative;
+   bottom: 0;
+}
