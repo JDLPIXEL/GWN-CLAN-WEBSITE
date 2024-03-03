@@ -103,6 +103,7 @@ function watchFiles(cb) {
 
 // #################################################
 // Exprots
+exports.build = parallel(genHTML, stylesheet, scripts, fonts, images)
 exports.watch = series(cleanUp, build, watchFiles);
 exports.html = genHTML;
 exports.css = series(cleanUpStylesheet, stylesheet);
@@ -111,4 +112,4 @@ exports.fonts = series(cleanUpFonts, fonts);
 exports.fonts = series(cleanUpImages, images);
 exports.clean = cleanUp;
 
-exports.default = series(cleanUp, build, parallel(genHTML, stylesheet, scripts, fonts, images));
+exports.default = series(cleanUp, parallel(genHTML, stylesheet, scripts, fonts, images));
