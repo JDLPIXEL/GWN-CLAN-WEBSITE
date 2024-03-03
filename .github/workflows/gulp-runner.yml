@@ -33,4 +33,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: "publish"
+          force_with_lease: true
+          directory: 'dist'
           # force: true
