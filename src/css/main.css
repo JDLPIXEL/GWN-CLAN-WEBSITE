@@ -1,0 +1,6 @@
+.background {
+    background:linear-gradient(#000000bb,#000000bb), url(../images/background-ets2.jpg);
+    width: 100%;
+    background-size: cover;
+    transform: translateY(110px);
+}
