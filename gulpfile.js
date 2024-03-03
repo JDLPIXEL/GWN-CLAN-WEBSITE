@@ -96,13 +96,14 @@ function watchFiles(cb) {
 	watch('src/**.html', genHTML);
 	watch('src/css/**.css', stylesheet);
 	watch('src/js/**.js', scripts);
+	watch('src/images/*.{png,jpg,webp,gif,jpeg,svg}', images);
 	watch('src/fonts/*.{woff2,ttf,eot,woff,svg}', fonts);
 }
 
 
 // #################################################
 // Exprots
-exports.watch = watchFiles;
+exports.watch = series(cleanUp, build, watchFiles);
 exports.html = genHTML;
 exports.css = series(cleanUpStylesheet, stylesheet);
 exports.js = series(cleanUpScripts, scripts);
@@ -110,4 +111,4 @@ exports.fonts = series(cleanUpFonts, fonts);
 exports.fonts = series(cleanUpImages, images);
 exports.clean = cleanUp;
 
-exports.default = series(cleanUp, parallel(genHTML, stylesheet, scripts, fonts, images));
+exports.default = series(cleanUp, build, parallel(genHTML, stylesheet, scripts, fonts, images));
